@@ -1,10 +1,15 @@
 package models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Movie {
     private String title; // Título de la película
     private String overview; // Descripción o sinopsis de la película
-    private String posterPath; // Ruta del póster de la película
-    private double rating; // Calificación de la película
+    @SerializedName("poster_path")
+    private String posterPath; // Nombres diferentes en JSON y Java
+
+    @SerializedName("vote_average")
+    private double rating; // Nombres diferentes en JSON y Java
 
     // Constructor
     public Movie(String title, String overview, String posterPath, double rating) {
@@ -47,5 +52,7 @@ public class Movie {
         this.rating = rating;
     }
 
-    // Puedes agregar aquí cualquier otro campo relevante que quieras incluir
+    public String getImageUrl() {
+        return "https://image.tmdb.org/t/p/w500" + posterPath;
+    }
 }
