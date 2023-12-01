@@ -29,7 +29,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inicializar LayoutInflater aquí
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        // Inflar el layout para el item
         View itemView = inflater.inflate(R.layout.activity_item_movie, parent, false);
+
         return new MovieViewHolder(itemView);
     }
 
@@ -72,6 +77,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         intent.putExtra("MOVIE_RATING", movie.getRating());
         intent.putExtra("MOVIE_ORIGINAL_LANGUAGE", movie.getOriginalLanguage());
         intent.putExtra("MOVIE_RELEASE_DATE", movie.getReleaseDate());
+        Log.d("onMovieClicked", "Path de la imagen: " + movie.getPosterPath());
         context.startActivity(intent);
     }
 }
