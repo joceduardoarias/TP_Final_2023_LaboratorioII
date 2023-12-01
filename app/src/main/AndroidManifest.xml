@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReelReveal"
         tools:targetApi="31">
-
+        <activity
+            android:name="ui.MovieDetailActivity"
+            android:exported="false" />
         <activity
             android:name="ui.MainActivity"
             android:exported="true">
@@ -24,9 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Si tienes otras actividades, se listarán aquí también. -->
-
     </application>
 
 </manifest>

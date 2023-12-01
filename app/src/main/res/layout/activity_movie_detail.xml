@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título de la Película -->
+    <TextView
+        android:id="@+id/movieTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Título" />
+
+    <!-- Calificación de la Película -->
+    <TextView
+        android:id="@+id/movieRatingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calificación: 0.0"
+        android:textSize="18sp" />
+
+    <!-- Idioma Original -->
+    <TextView
+        android:id="@+id/movieLanguageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Idioma Original"
+        android:textSize="16sp" />
+
+    <!-- Fecha de Lanzamiento -->
+    <TextView
+        android:id="@+id/movieReleaseDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Lanzamiento"
+        android:textSize="16sp" />
+
+    <!-- Poster de la Película -->
+    <ImageView
+        android:id="@+id/moviePosterImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" /> <!-- Placeholder image -->
+
+    <!-- Descripción de la Película -->
+    <TextView
+        android:id="@+id/movieOverviewTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripción"
+        android:textSize="16sp" />
+
+</LinearLayout>
