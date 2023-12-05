@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.reelreveal.app.R;
 
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            toolbar.setTitle("ReelReveal");
+        }
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         movieAdapter = new MovieAdapter(this, new ArrayList<>());

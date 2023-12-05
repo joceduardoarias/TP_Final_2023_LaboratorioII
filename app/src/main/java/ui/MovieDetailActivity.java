@@ -1,7 +1,8 @@
 package ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.appcompat.widget.Toolbar;
+import android.view.MenuItem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,14 @@ public class MovieDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
+        Toolbar toolbar = findViewById(R.id.toolbar_movie_detail);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            toolbar.setTitle("Detalle");;
+        }
 
         // Obtener los datos del intent
         String title = getIntent().getStringExtra("MOVIE_TITLE");
@@ -48,6 +57,17 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         // Cargar la imagen del póster usando Picasso
         Picasso.get().load(fullPosterPath).into(posterImageView);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

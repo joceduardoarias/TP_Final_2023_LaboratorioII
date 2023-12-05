@@ -2,6 +2,8 @@ package models;
 
 import com.google.gson.annotations.SerializedName;
 
+import utils.Constants;
+
 public class Movie {
     public String getOriginalLanguage() {
         return originalLanguage;
@@ -74,6 +76,6 @@ public class Movie {
     }
 
     public String getImageUrl() {
-        return "https://image.tmdb.org/t/p/w500" + posterPath;
+        return Constants.TMDB_IMAGE_BASE_URL + posterPath;
     }
 }
